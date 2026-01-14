@@ -51,6 +51,9 @@ app.use(async (req, res, next) => {
     next(error);
   }
 });
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
 
 app.use("/api/products", productRoutes);
 
